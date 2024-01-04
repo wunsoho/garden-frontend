@@ -196,7 +196,9 @@ h2 {
 
 .contest-box{
     max-height: 60%;
-    height: 50px;
+    height: 200px;
+    width: 400px;
     position: relative;
-
 }
+
+
