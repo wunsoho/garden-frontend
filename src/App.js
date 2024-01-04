@@ -1,7 +1,15 @@
 import logo from './logo.svg';
+import React, { useEffect } from "react";
 import './App.css';
 
 function App() {
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  useEffect(() => {
+    setScreenSize();
+  });
   return (
     <div className="App">
       <header className="App-header">
@@ -21,5 +29,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
