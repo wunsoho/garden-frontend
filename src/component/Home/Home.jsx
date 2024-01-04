@@ -8,6 +8,8 @@ import Banner3 from "../image/Banner3.png";
 import Banner4 from "../image/Banner4.png";
 import Banner5 from "../image/Banner5.png";
 import Banner6 from "../image/Banner6.png";
+import CategoryChoose from "../image/CategoryChoose.png";
+import Logo from "../image/Logo.png";
 
 const categories = ['AI', 'ICT', 'IT solutions'];
 const categories1 = ['국내', '해외', '온라인'];
@@ -113,7 +115,9 @@ const ExampleComponent = () => {
 
   return (
     <div className ="HomeBody">
-      <h2>Logo</h2>
+      <div>
+        <img src={Logo} alt='LOGO'/>
+      </div>
       <br/>
       <Slider {...settings}>
           <div>
@@ -135,10 +139,13 @@ const ExampleComponent = () => {
             <img src={Banner6} alt="Banner6"/>
           </div>
         </Slider>
+
       <div className = "title">
-        <h2>카테고리 선택</h2> 
-        <button onClick={handleSearchClick}>검색하기</button>
+        <img id='CategoryIm' src={CategoryChoose} alt='CategoryChoose'/>
+        <h2 id='choose1'>카테고리</h2><h2 id='choose2'>선택</h2> 
+        <button id='search' onClick={handleSearchClick}>검색</button>
       </div>
+
       <h3>분야</h3>
       {categories.map(category => (
         <button
@@ -149,6 +156,7 @@ const ExampleComponent = () => {
           {category}
         </button>
       ))}
+
       <h3>위치</h3>
       {categories1.map(area => (
         <button
@@ -159,6 +167,7 @@ const ExampleComponent = () => {
           {area}
         </button>
       ))}
+
       <h3>구분</h3>
       {categories2.map(type => (
         <button
