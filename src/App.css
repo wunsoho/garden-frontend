@@ -7,6 +7,9 @@
   min-height: 100vh;
 }
 
+#Logo{
+  margin-top: 20px;
+}
 
 .title {
   letter-spacing: 0em;
@@ -14,11 +17,6 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
-}
-
-#CategoryImg{
-  width: 28px;
-  height: 28px;
 }
 
 #choose1{
@@ -59,6 +57,67 @@ font-family: Pretendard;
 font-size: 14px;
 font-style: normal;
 font-weight: 400;
+line-height: 140%; /* 19.6px */
+}
+
+.Categories{
+  line-height: 10px;
+}
+
+#session{
+  margin-top: -10px;
+  color: var(--Foundation-Blue-Darker, #525153);
+
+/* sub2 l 17px me 140% */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 22.4px */
+}
+
+#Cago1{
+  margin-right: 20px;
+  display: inline-block;
+  margin-top: 30px;
+  line-height: 0px;
+  color: var(--Foundation-Blue-Darker, #525153);
+
+/* sub2 l 17px me 140% */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+}
+
+#Cago2{
+  margin-right: 20px;
+  display: inline-block;
+  margin-top: 30px;
+  line-height: 0px;
+  color: var(--Foundation-Blue-Darker, #525153);
+
+/* sub2 l 17px me 140% */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+}
+
+.CircleButt{
+  word-spacing: 5px;
+  border-radius: 15px;
+  border: solid #B0AEB2 1px;
+  background: var(--foundation-blue-light-hover, #FCFCFC);
+  box-shadow: none;
+  color: var(--foundation-green-dark-active, #014C28);
+text-align: center;
+
+/* sub3 l 14px re 140% */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
 line-height: 140%; /* 19.6px */
 }
 
@@ -107,7 +166,7 @@ h2 {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #03AA5A;
 }
 
 @keyframes App-logo-spin {

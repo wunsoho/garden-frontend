@@ -15,7 +15,7 @@ const categories = ['AI', 'ICT', 'IT solutions'];
 const categories1 = ['국내', '해외', '온라인'];
 const categories2 = ['학회', '컨퍼런스'];
 
-const ExampleComponent = () => {
+const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState('전체');
   const [selectedArea, setSelectedArea] = useState([]);
   const [selectedType, setSelectedType] = useState([]);
@@ -115,8 +115,8 @@ const ExampleComponent = () => {
 
   return (
     <div className ="HomeBody">
-      <div>
-        <img src={Logo} alt='LOGO'/>
+      <div className='header'>
+        <img src={Logo} alt='Logo'/>
       </div>
       <br/>
       <Slider {...settings}>
@@ -146,38 +146,53 @@ const ExampleComponent = () => {
         <button id='search' onClick={handleSearchClick}>검색</button>
       </div>
 
-      <h3>분야</h3>
-      {categories.map(category => (
+      <div className='Categories'>
+        <h2 id='session'>분야</h2>
+        {categories.map(category => (
         <button
-          key={category}
-          onClick={() => handleCategoryClick(category)}
-          style={{ marginRight: '8px', marginBottom: '8px', padding: '4px 8px', cursor: 'pointer', backgroundColor: selectedCategory === category ? 'lightblue' : 'initial' }}
+            className='CircleButt'
+            key={category}
+            onClick={() => handleCategoryClick(category)}
+            style={{ marginRight: '8px', marginBottom: '8px', padding: '4px 8px', 
+            cursor: 'pointer', backgroundColor: selectedCategory === category ? '#03AA5A' : 'initial',
+            color: selectedCategory === category ? 'white' : 'initial'}}
         >
           {category}
         </button>
-      ))}
+        ))}
+          
+          <br/>
 
-      <h3>위치</h3>
-      {categories1.map(area => (
-        <button
-          key={area}
-          onClick={() => handleAreaClick(area)}
-          style={{ marginRight: '8px', marginBottom: '8px', padding: '4px 8px', cursor: 'pointer', backgroundColor: selectedArea.includes(area) ? 'lightblue' : 'initial' }}
-        >
-          {area}
-        </button>
-      ))}
+        <h3 id='Cago1'>위치</h3>
+        {categories1.map(area => (
+          <button
+            className='CircleButt'
+            key={area}
+            onClick={() => handleAreaClick(area)}
+            style={{ marginRight: '8px', marginBottom: '8px', padding: '4px 8px', cursor: 'pointer', 
+            backgroundColor: selectedArea.includes(area) ? '#03AA5A' : 'initial',
+            color: selectedArea.includes(area) ? 'white' : 'initial'}}
+          >
+            {area}
+          </button>
+        ))}
 
-      <h3>구분</h3>
-      {categories2.map(type => (
-        <button
-          key={type}
-          onClick={() => handleTypeClick(type)}
-          style={{ marginRight: '8px', marginBottom: '8px', padding: '4px 8px', cursor: 'pointer', backgroundColor: selectedType.includes(type) ? 'lightblue' : 'initial' }}
-        >
-          {type}
-        </button>
-      ))}
+          <br/>
+
+        <h3 id='Cago2'>구분</h3>
+        {categories2.map(type => (
+          <button
+            className='CircleButt'
+            key={type}
+            onClick={() => handleTypeClick(type)}
+            style={{ marginRight: '8px', marginBottom: '8px', padding: '4px 8px', cursor: 'pointer', 
+            backgroundColor: selectedType.includes(type) ? '#03AA5A' : 'initial',
+            color: selectedType.includes(type) ? 'white' : 'initial'}}
+          >
+            {type}
+          </button>
+        ))}
+      </div>
 
       <ul>
         {filteredItems.map(item => (
@@ -188,4 +203,4 @@ const ExampleComponent = () => {
   );
 };
 
-export default ExampleComponent;
+export default Home;
