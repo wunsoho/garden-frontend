@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import './App.css';
-import ExampleComponent from "./component/Home/Home"
+import Home from "./component/Home/Home"
 import Nav from "./component/Nav/Nav"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Map from "./component/Map/Map";
+import Ranking from "./component/Ranking/Ranking"
 
 function App() {
   function setScreenSize() {
@@ -16,9 +18,9 @@ function App() {
     <BrowserRouter>
     <div>
       <Routes>
-        <Route path="/" element={<ExampleComponent/>}/>
-        <Route path="/Ranking" element={<ExampleComponent/>}/>
-        <Route path="/Map" element={<ExampleComponent/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/Ranking" element={<Ranking/>}/>
+        <Route path="/Map" element={<Map/>}/>
       </Routes>
     </div>
     <Nav/>

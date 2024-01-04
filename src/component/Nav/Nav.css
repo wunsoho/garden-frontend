@@ -4,10 +4,9 @@
     margin-bottom: 10px;
     padding: 15px 0px;
     text-align: center;
+    position: relative;
 }
 
 .navbarMenu {
-    color:black;
-    margin : 40px;
-    text-decoration: none;
+    margin : 33px;
 }

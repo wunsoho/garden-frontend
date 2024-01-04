@@ -6,11 +6,119 @@
   height: calc(var(--vh, 1vh) * 100);
   min-height: 100vh;
 }
+
+#Logo{
+  margin-top: 20px;
+}
+
 .title {
+  letter-spacing: 0em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
+}
+
+#choose1{
+  padding-right: 0px;
+  color: #03AA5A;
+
+/* h3 l 18px sm 140% */
+font-family: Pretendard;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 25.2px */
+}
+
+#choose2{
+  padding-right: 120px;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+#search{
+  border: 0px;
+  margin: 40px;
+  display: flex;
+padding: 6px 15px;
+justify-content: center;
+align-items: center;
+border-radius: 30px;
+background: var(--Foundation-Green-Normal, #03AA5A);
+color: var(--Color, #FFF);
+text-align: center;
+
+/* sub3 l 14px re 140% */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+}
+
+.Categories{
+  line-height: 10px;
+}
+
+#session{
+  margin-top: -10px;
+  color: var(--Foundation-Blue-Darker, #525153);
+
+/* sub2 l 17px me 140% */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 140%; /* 22.4px */
+}
+
+#Cago1{
+  margin-right: 20px;
+  display: inline-block;
+  margin-top: 30px;
+  line-height: 0px;
+  color: var(--Foundation-Blue-Darker, #525153);
+
+/* sub2 l 17px me 140% */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+}
+
+#Cago2{
+  margin-right: 20px;
+  display: inline-block;
+  margin-top: 30px;
+  line-height: 0px;
+  color: var(--Foundation-Blue-Darker, #525153);
+
+/* sub2 l 17px me 140% */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+}
+
+.CircleButt{
+  word-spacing: 5px;
+  border-radius: 15px;
+  border: solid #B0AEB2 1px;
+  background: var(--foundation-blue-light-hover, #FCFCFC);
+  box-shadow: none;
+  color: var(--foundation-green-dark-active, #014C28);
+text-align: center;
+
+/* sub3 l 14px re 140% */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 140%; /* 19.6px */
 }
 
 h2 {
@@ -23,6 +131,7 @@ h2 {
   margin-top: 10px;
   background-color: white;
 }
+
 .NavBody{
   max-width: 400px;
   margin-left: auto;
@@ -57,7 +166,7 @@ h2 {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #03AA5A;
 }
 
 @keyframes App-logo-spin {
