@@ -8,6 +8,7 @@ import Banner3 from "../image/Banner3.png";
 import Banner4 from "../image/Banner4.png";
 import Banner5 from "../image/Banner5.png";
 import Banner6 from "../image/Banner6.png";
+import axios from 'axios';
 
 const categories = ['AI', 'ICT', 'IT solutions'];
 const categories1 = ['국내', '해외', '온라인'];
@@ -17,20 +18,7 @@ const ExampleComponent = () => {
   const [selectedCategory, setSelectedCategory] = useState('전체');
   const [selectedArea, setSelectedArea] = useState([]);
   const [selectedType, setSelectedType] = useState([]);
-  const [items, setItems] = useState([
-    { id: 1, category: 'AI', area: '국내', type: '학회' },
-    { id: 2, category: 'ICT', area: '해외', type: '컨퍼런스' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
-    
-  ]);
+  const [items, setItems] = useState([]);
 
   const [filteredItems, setFilteredItems] = useState(items);
 
@@ -40,17 +28,18 @@ const ExampleComponent = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true, // 자동 전환 활성화
-    autoplaySpeed: 2500, // 자동 전환 간격 설정 (2초
+    autoplay: true, 
+    autoplaySpeed: 2500, 
   };
 
+  const apiUrl = 'http://43.200.230.191:8080/api/v1/contest'
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://43.200.230.191:8080//api/v1/contest');
-        const data = await response.json();
+        const response = await axios.get(apiUrl);
+        const port = response.data;
 
-        setItems(data);
+        setItems(port);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -170,10 +159,19 @@ const ExampleComponent = () => {
         </button>
       ))}
 
+      <div>
+      {items && (
+        <p>{items}</p>
+      )}
+      </div>
       <ul>
         {filteredItems.map(item => (
-          <li key={item.id}>{item.category} - {item.area} - {item.type}</li>
-        ))}
+      <li key={item.contestId}>
+        {items && (
+        <p>{items}</p>
+      )}
+      </li>
+      ))}
       </ul>
     </div>
   );
