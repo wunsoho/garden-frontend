@@ -114,6 +114,7 @@ const ExampleComponent = () => {
   return (
     <div className ="HomeBody">
       <h2>Logo</h2>
+      <br/>
       <Slider {...settings}>
           <div>
             <img src={Banner1} alt="Banner1" />
@@ -134,7 +135,10 @@ const ExampleComponent = () => {
             <img src={Banner6} alt="Banner6"/>
           </div>
         </Slider>
-      <h2>카테고리 선택</h2>
+      <div className = "title">
+        <h2>카테고리 선택</h2> 
+        <button onClick={handleSearchClick}>검색하기</button>
+      </div>
       <h3>분야</h3>
       {categories.map(category => (
         <button
@@ -165,8 +169,6 @@ const ExampleComponent = () => {
           {type}
         </button>
       ))}
-      <br/>
-      <button onClick={handleSearchClick}>검색하기</button>
 
       <ul>
         {filteredItems.map(item => (
