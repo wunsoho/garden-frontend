@@ -14,8 +14,8 @@ import Logo from "../image/Logo.png";
 import ContestItem from "./ContestItem";
 
 
-const categories = ['AI', 'ICT', 'IT solutions'];
-const categories1 = ['국내', '해외', '온라인'];
+const categories = ['AI', 'ICT', 'IT solutions', '보안', '빅데이터','컴퓨터'];
+const categories1 = ['해외', '국내', '온라인'];
 const categories2 = ['학회', '컨퍼런스'];
 
 const Home = () => {
@@ -24,6 +24,9 @@ const Home = () => {
   const [selectedType, setSelectedType] = useState([]);
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState(items);
+  const [items2, setItems2] = useState([]);
+  const [filteredItems2, setFilteredItems2] = useState(items2);
+
 
   const settings = {
     dots: true,
@@ -35,14 +38,16 @@ const Home = () => {
     autoplaySpeed: 2500, 
   };
 
-  const apiUrl = 'http://43.200.230.191:8080/api/v1/contest'
+  const mainapiUrl = 'http://43.200.230.191:8080/api/v1/contest'
+  const categoryapiUrl = 'http://43.200.230.191:8080/api/v1/contest/category'
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(apiUrl);
-        const port = response.data;
-        console.log(response.data)
+        const mainresponse = await axios.get(mainapiUrl);
+        const port = mainresponse.data;
+        console.log(mainresponse.data);
         console.log('Fetched Data:', port);
+
 
         setItems(port);
         setFilteredItems(port);
@@ -51,8 +56,21 @@ const Home = () => {
         console.error('Error fetching data:', error);
       }
     };
+    const fetchData2 = async () => {
+      try {
+        const categoryresponse = await axios.get(categoryapiUrl);
+        const port2 = categoryresponse.data;
+        console.log(categoryresponse.data);
+
+        setItems2(port2);
+        setFilteredItems2(port2);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
 
     fetchData();
+    fetchData2();
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
       const pageHeight = document.documentElement.scrollHeight;
@@ -190,6 +208,7 @@ const Home = () => {
       {filteredItems.map(item => (
   <ContestItem key={item.contestId} contest={item} />
 ))}
+
       
     </div>
   );
