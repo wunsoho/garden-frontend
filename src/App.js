@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import './App.css';
-import ExampleComponent from "./component/test2"
+import ExampleComponent from "./component/Home/Home"
+import Nav from "./component/Nav/Nav"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
@@ -16,8 +17,11 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<ExampleComponent/>}/>
+        <Route path="/Ranking" element={<ExampleComponent/>}/>
+        <Route path="/Map" element={<ExampleComponent/>}/>
       </Routes>
     </div>
+    <Nav/>
     </BrowserRouter>
   )
   }

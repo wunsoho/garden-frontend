@@ -11,8 +11,8 @@ const ExampleComponent = () => {
   const [selectedCategory, setSelectedCategory] = useState('전체');
   const [selectedArea, setSelectedArea] = useState([]);
   const [selectedType, setSelectedType] = useState([]);
-  const [items, setItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [apiData, setApiData] = useState([]); // 서버에서 받아온 API 데이터를 저장할 상태 추가
+  const [filteredItems, setFilteredItems] = useState([]); // API 데이터를 필터링하여 저장할 상태 추가
 
   const settings = {
     dots: true,
@@ -21,22 +21,6 @@ const ExampleComponent = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // 실제 프로덕션 환경에서는 서버의 실제 주소를 사용하세요.
-        const response = await fetch('http://43.200.230.191:8080/');
-        const data = await response.json();
-
-        setItems(data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -58,11 +42,13 @@ const ExampleComponent = () => {
     }
   };
 
-  const handleSearchClick = () => {
-    // 여기서 서버에 데이터를 가져오는 요청을 보낼 수 있습니다.
-    // 서버에서 필터링된 결과를 응답으로 받아와서 setFilteredItems를 호출합니다.
-    // 아래는 예시로 클라이언트 측에서 필터링된 결과를 사용합니다.
-    let filtered = items;
+  const handleSearchClick = async () => {
+    // 서버에서 API 데이터를 가져오는 함수 호출
+    const apiResult = await fetchApiData();
+    setApiData(apiResult);
+
+    // 이하 동일한 코드
+    let filtered = apiResult;
 
     if (selectedCategory !== '전체') {
       filtered = filtered.filter(item => item.category === selectedCategory);
@@ -78,6 +64,39 @@ const ExampleComponent = () => {
 
     setFilteredItems(filtered);
   };
+
+  const fetchApiData = async () => {
+    try {
+      // 실제 API 엔드포인트를 사용하고 필요에 따라 적절한 옵션을 설정하세요.
+      const response = await fetch('https://api.example.com/data');
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching API data:', error);
+      return [];
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // 스크롤 위치와 페이지의 높이를 계산하여 페이지의 끝까지 스크롤되었을 때 추가 로드 또는 처리를 할 수 있습니다.
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      if (scrollPosition >= pageHeight) {
+        // 여기에 처리할 내용 추가
+        console.log('스크롤이 페이지 끝에 도달했습니다!');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너를 정리
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
     <div>

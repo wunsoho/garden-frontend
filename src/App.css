@@ -4,6 +4,18 @@
 .body{
   height: calc(var(--vh, 1vh) * 100);
 }
+.HomeBody{
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f2f2f2;
+}
+.NavBody{
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f2f2f2;
+}
 
 :root {
   --vh: 100%;

@@ -12,9 +12,11 @@ const ExampleComponent = () => {
   const [selectedArea, setSelectedArea] = useState([]);
   const [selectedType, setSelectedType] = useState([]);
   const [items, setItems] = useState([
-    { id: 1, title: '리액트 입문', category: 'AI', area: '국내', type: '학회' },
-    { id: 2, title: '맛있는 음식 만들기', category: 'ICT', area: '해외', type: '컨퍼런스' },
-    { id: 3, title: '세계 여행기', category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 1, category: 'AI', area: '국내', type: '학회' },
+    { id: 2, category: 'ICT', area: '해외', type: '컨퍼런스' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
   ]);
 
   const [filteredItems, setFilteredItems] = useState(items);
@@ -30,7 +32,7 @@ const ExampleComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://43.200.230.191:8080/');
+        const response = await fetch('http://43.200.230.191:8080//api/v1/contest');
         const data = await response.json();
 
         setItems(data);
@@ -51,7 +53,6 @@ const ExampleComponent = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // 컴포넌트가 언마운트될 때 이벤트 리스너를 정리
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -96,7 +97,7 @@ const ExampleComponent = () => {
   };
 
   return (
-    <div>
+    <div className ="HomeBody">
       <h2>Logo</h2>
       <Slider {...settings}>
           <div>
@@ -154,7 +155,7 @@ const ExampleComponent = () => {
 
       <ul>
         {filteredItems.map(item => (
-          <li key={item.id}>{item.title} - {item.category} - {item.area} - {item.type}</li>
+          <li key={item.id}>{item.category} - {item.area} - {item.type}</li>
         ))}
       </ul>
     </div>
