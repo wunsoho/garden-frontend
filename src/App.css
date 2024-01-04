@@ -11,6 +11,21 @@
   margin-top: 20px;
 }
 
+#textSearch{
+  height: 30px;
+  border-radius: 20px;
+  margin-left: 60px;
+  margin-bottom: -10px;
+  padding-top: 5px;
+  padding-left: 8px;
+  border: solid #03AA5A 1px;
+}
+
+#searchImg{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 .title {
   letter-spacing: 0em;
   display: flex;
@@ -66,6 +81,7 @@ line-height: 140%; /* 19.6px */
 
 #session{
   margin-top: -10px;
+  margin-bottom: 10px;
   color: var(--Foundation-Blue-Darker, #525153);
 
 /* sub2 l 17px me 140% */
@@ -176,4 +192,11 @@ h2 {
   to {
     transform: rotate(360deg);
   }
+}
+
+.contest-box{
+    max-height: 60%;
+    height: 50px;
+    position: relative;
+
 }
