@@ -24,8 +24,6 @@ const Home = () => {
   const [selectedType, setSelectedType] = useState([]);
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState(items);
-  const [items2, setItems2] = useState([]);
-  const [filteredItems2, setFilteredItems2] = useState(items2);
 
 
   const settings = {
@@ -38,8 +36,7 @@ const Home = () => {
     autoplaySpeed: 2500, 
   };
 
-  const mainapiUrl = 'http://43.200.230.191:8080/api/v1/contest'
-  const categoryapiUrl = 'http://43.200.230.191:8080/api/v1/contest/category'
+  const mainapiUrl = 'http://218.53.53.163:8080/api/v1/contest'
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -56,21 +53,8 @@ const Home = () => {
         console.error('Error fetching data:', error);
       }
     };
-    const fetchData2 = async () => {
-      try {
-        const categoryresponse = await axios.get(categoryapiUrl);
-        const port2 = categoryresponse.data;
-        console.log(categoryresponse.data);
-
-        setItems2(port2);
-        setFilteredItems2(port2);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
 
     fetchData();
-    fetchData2();
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
       const pageHeight = document.documentElement.scrollHeight;
