@@ -16,8 +16,12 @@ function App() {
     <BrowserRouter>
     <div>
       <Routes>
+<<<<<<< HEAD
         <Route path="/" element={<ExampleComponent/>}/>
         <Route path="/123" element={<Test3/>}/>
+=======
+        <Route path="/" element={<Test/>}/>
+>>>>>>> 1b2a4ac9d8abfe6fd1cbcbca33fc622147b952db
       </Routes>
     </div>
     </BrowserRouter>
