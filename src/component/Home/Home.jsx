@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Banner1 from "../image/Banner1.png";
+import Banner2 from "../image/Banner2.png";
+import Banner3 from "../image/Banner3.png";
+import Banner4 from "../image/Banner4.png";
+import Banner5 from "../image/Banner5.png";
+import Banner6 from "../image/Banner6.png";
 
 const categories = ['AI', 'ICT', 'IT solutions'];
 const categories1 = ['국내', '해외', '온라인'];
@@ -17,6 +23,13 @@ const ExampleComponent = () => {
     { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
     { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
     { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    { id: 3, category: 'IT solutions', area: '온라인', type: '학회' },
+    
   ]);
 
   const [filteredItems, setFilteredItems] = useState(items);
@@ -27,6 +40,8 @@ const ExampleComponent = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true, // 자동 전환 활성화
+    autoplaySpeed: 2500, // 자동 전환 간격 설정 (2초
   };
 
   useEffect(() => {
@@ -101,22 +116,22 @@ const ExampleComponent = () => {
       <h2>Logo</h2>
       <Slider {...settings}>
           <div>
-            <h3>1</h3>
+            <img src={Banner1} alt="Banner1" />
           </div>
           <div>
-            <h3>2</h3>
+            <img src={Banner2} alt="Banner2"/>
           </div>
           <div>
-            <h3>3</h3>
+            <img src={Banner3} alt="Banner3"/>
           </div>
           <div>
-            <h3>4</h3>
+            <img src={Banner4} alt="Banner4"/>
           </div>
           <div>
-            <h3>5</h3>
+            <img src={Banner5} alt="Banner5"/>
           </div>
           <div>
-            <h3>6</h3>
+            <img src={Banner6} alt="Banner6"/>
           </div>
         </Slider>
       <h2>카테고리 선택</h2>

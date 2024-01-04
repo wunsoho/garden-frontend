@@ -1,20 +1,22 @@
 .App {
   text-align: center;
+  background-color: black;
 }
 .body{
   height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
 }
 .HomeBody{
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #f2f2f2;
+  background-color: white;
 }
 .NavBody{
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #f2f2f2;
+  background-color: gray;
 }
 
 :root {
