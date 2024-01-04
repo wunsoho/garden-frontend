@@ -30,7 +30,7 @@ const Ranking = () => {
         
     })
     return (      
-    <div className ="test1">
+    <div className ="test1" style={{margin: ' 0 auto'}}>
         <div className='header'>
         <img src={Logo} alt='Logo'/>
         <input id='textSearch' type='text' placeholder='일본 오사카 IoT 솔루션...'></input>
