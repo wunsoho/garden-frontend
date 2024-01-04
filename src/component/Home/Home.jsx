@@ -12,7 +12,7 @@ import axios from 'axios';
 import CategoryChoose from "../image/CategoryChoose.png";
 import Logo from "../image/Logo.png";
 import ContestItem from "./ContestItem";
-
+import search from "../image/search.png";
 
 const categories = ['AI', 'ICT', 'IT solutions'];
 const categories1 = ['국내', '해외', '온라인'];
@@ -111,6 +111,8 @@ const Home = () => {
     <div className ="HomeBody">
       <div className='header'>
         <img src={Logo} alt='Logo'/>
+        <input id='textSearch' type='text' placeholder='일본 오사카 IoT 솔루션...'></input>
+        <img id='searchImg' src={search} alt='search'/>
       </div>
       <br/>
       <Slider {...settings}>
@@ -135,7 +137,7 @@ const Home = () => {
         </Slider>
 
       <div className = "title">
-        <img id='CategoryIm' src={CategoryChoose} alt='CategoryChoose'/>
+        <img src={CategoryChoose} alt='CategoryChoose'/>
         <h2 id='choose1'>카테고리</h2><h2 id='choose2'>선택</h2> 
         <button id='search' onClick={handleSearchClick}>검색</button>
       </div>
